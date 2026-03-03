@@ -16,7 +16,33 @@ int factorial(int n) {
   return n * factorial(n - 1);
 }
 
+int C(int n, int r){
+  return factorial(n)/(factorial(r)*factorial(n-r));
+}
+
+int R(int n, int r){
+  return factorial(n)/factorial(n-r);
+}
+
 int main(int argc, char **argv) {
+  if (argc != 4){
+    printf("Usage: ./combinatorials n C r\n");
+    printf("   or: ./combinatorials n P r\n");
+    return 1;
+  }
+  
+  int n = atoi(argv[1]);
+  int r = atoi(argv[3]);
+
+  if (n<0 || r<0){
+    printf("n and r must be positive");
+    return 1;
+  }
+
+  if (r>n){
+    printf("r must less or equal to n");
+  }
+  
   /*
   The program should accept a command line argument as follows:
   ./combinatorials n C r
