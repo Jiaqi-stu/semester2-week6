@@ -4,12 +4,13 @@
 /**
  * @brief Prints all values from the numbers array
  *
- * @param count number of values in the array
- * @param numbers the array of values
+ * @param count number of values in the array 数组中值的数量
+ * @param numbers the array of values 数值数组
  */
 void print_all(int count, int *numbers) {
   for (int i = 0; i < count; i++) {
-    printf("%d%c", numbers[i], (i == count - 1) ? '\n' : ' ');
+    char c= (i == count - 1) ? '\n' : ' ';
+    printf("%d%c", numbers[i], c);
   }
 }
 
